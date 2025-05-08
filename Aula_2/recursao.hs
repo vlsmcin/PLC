@@ -51,3 +51,12 @@ ehPrimo n = naoTemDivisor (n-1) n
           naoTemDivisor x y | x == 1 = True
                              | mod y x == 0 = False
                              | otherwise = naoTemDivisor (x-1) y
+
+
+-- Primos entre si
+primosEntreSi :: Int -> Int -> Bool
+primosEntreSi x y = divisores 2 x y
+    where divisores :: Int -> Int -> Int -> Bool
+          divisores a b c | a == (b - 1) = True
+                          | mod b a == 0 && mod c a == 0 = False
+                          | otherwise = divisores (a+1) b c
