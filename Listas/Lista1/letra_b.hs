@@ -5,7 +5,7 @@ main = do
     print result
 
 logMes :: String -> String -> Double
-logMes month str = foldl (+) 0.0 (getMonthList str month)
+logMes month str = foldl (+) 0.00 (getMonthList str month)
 
 getMonthList :: String -> String -> [Double]
 getMonthList str searchMonth = auxGet str [] False True [] []
@@ -14,6 +14,7 @@ getMonthList str searchMonth = auxGet str [] False True [] []
           auxGet (s:ss) flt state isMonth month lst 
             | ('0' <= s && s <= '9') || s == '.' = auxGet ss (flt ++ [s]) True isMonth month lst
             | state == True && s == ';' && month == searchMonth = auxGet ss [] False True [] (lst ++ [read flt::Double])
+            | state == True && s == ';' = auxGet ss [] False True [] lst
             | s == ';' = auxGet ss flt state False month lst
             | 'A' <= s && s <= 'Z' && isMonth == True = auxGet ss flt False True (month ++ [s]) lst
             | otherwise = auxGet ss [] False isMonth month lst
