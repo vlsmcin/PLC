@@ -19,7 +19,7 @@ editText str lst = doCursor str lst 0
                                                | otherwise = doCursor str nxt cur
           doCursor str ((Delete i):nxt) cur | i > 0 = doCursor (apagaNaPosX (cur+1) str) ((Delete (i-1)):nxt) cur
                                             | otherwise = doCursor str nxt cur
-          doCursor str ((Insert ch):nxt) cur = doCursor (insereNaPosX cur ch str) nxt (cur + lenghtStr ch)
+          doCursor str ((Insert ch):nxt) cur = doCursor (insereNaPosX cur ch str) nxt cur
 
 apagaNaPosX :: Int -> String -> String
 apagaNaPosX x str = deletarChar 0 str
