@@ -14,7 +14,7 @@ editText :: String -> [Cmd] -> String
 editText str lst = doCursor str lst 0
     where doCursor :: String -> [Cmd] -> Int -> String
           doCursor str [] _ = str
-          doCursor str ((Cursor i):nxt) cur = doCursor str nxt i
+          doCursor str ((Cursor i):nxt) cur = doCursor str nxt (cur+i)
           doCursor str ((Backspace i):nxt) cur | i > 0 = doCursor (apagaNaPosX cur str) ((Backspace (i-1)):nxt) (max 0 (cur-1))
                                                | otherwise = doCursor str nxt cur
           doCursor str ((Delete i):nxt) cur | i > 0 = doCursor (apagaNaPosX (cur+1) str) ((Delete (i-1)):nxt) cur
