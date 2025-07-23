@@ -1,4 +1,4 @@
-public abstract class Pessoa implements Comparable<Integer> {
+public abstract class Pessoa implements Comparable<Pessoa> {
     private Integer idade;
     private String nome;
 
@@ -15,12 +15,13 @@ public abstract class Pessoa implements Comparable<Integer> {
         return idade;
     }
 
-    public Integer compareTo(Pessoa pessoa) {
+    @Override
+    public int compareTo(Pessoa pessoa) {
         return this.idade - pessoa.idade;
     }
 
     public String toString() {
-        return nome + ":" + idade.toString() + "[" + getTicketType() + "]";
+        return nome + ": " + idade.toString() + "[" + getTicketType() + "]";
     }
 
     protected abstract Ticket getTicketType();

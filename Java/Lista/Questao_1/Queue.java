@@ -8,10 +8,27 @@ public class Queue<T extends Pessoa> {
     }
 
     public Queue(int capacidade) {
-        fila = new ArrayList<>(capacidade);
+        fila = new ArrayList<T>(capacidade);
     }
 
-    public T push(T pessoas) {
-        
+    public void push(T pessoas) {
+        for (int i=0;i<fila.size();i++) {
+            if (fila.get(i).compareTo(pessoas) < 0) {
+                fila.add(i, pessoas);
+                return;
+            }
+        }
+
+        fila.add(fila.size(), pessoas);
+    }
+
+    public T pop() {
+        T ret = fila.get(0);
+        fila.remove(0);
+        return ret;
+    }
+
+    public boolean isEmpty() {
+        return fila.size() == 0;
     }
 }
