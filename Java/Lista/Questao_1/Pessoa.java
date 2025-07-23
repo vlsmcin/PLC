@@ -23,5 +23,5 @@ public abstract class Pessoa implements Comparable<Integer> {
         return nome + ":" + idade.toString() + "[" + getTicketType() + "]";
     }
 
-    protected abstract int getTicketType();
+    protected abstract Ticket getTicketType();
 }

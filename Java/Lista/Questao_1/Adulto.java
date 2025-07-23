@@ -1,5 +1,10 @@
 public class Adulto extends Pessoa {
-    public int getTicketType() {
+    @Override
+    public Ticket getTicketType() {
         return Ticket.ADULTO;
+    }
+
+    public Adulto(Integer idade, String nome) {
+        super(idade, nome);
     }
 }
