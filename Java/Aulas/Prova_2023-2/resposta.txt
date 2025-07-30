@@ -2,7 +2,7 @@
     a.function = 24
     b.function = 7
     c.function = 9
-    a.function = 9
+    a.function = 7
     b.function = 9
 
 2:   I  |  C   | CA
