@@ -1,0 +1,8 @@
+1- b, b
+2- a
+3- d -- Tem referência para Peter Parker,
+        referência para o índice da String,
+        e esse índicer referencia a String também,
+        Quando atribuo null, ele tira uma das
+        referências
+4- b

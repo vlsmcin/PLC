@@ -1,0 +1,12 @@
+1:
+    a.function = 24
+    b.function = 7
+    c.function = 9
+    a.function = 9
+    b.function = 9
+
+2:   I  |  C   | CA
+    Sim | Nao  | Nao
+    Sim | Nao  | Nao
+    Nao | Sim  | Nao
+    Sim | Nao  | Sim 
