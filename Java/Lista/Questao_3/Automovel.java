@@ -17,7 +17,14 @@ public class Automovel {
         return CombustivelAtual;
     }
 
-    public void setCombustivelAtual(double combustivelAtual) {
+    public void setCombustivelAtual(double combustivelAtual) throws CombustivelOverflow {
+        if (this.CombustivelAtual < combustivelAtual) {
+            throw new CombustivelOverflow();
+        }
         CombustivelAtual = combustivelAtual;
+    }
+
+    public TipoMotor getMotor() {
+        return motor;
     }
 }
