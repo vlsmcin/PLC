@@ -18,7 +18,7 @@ public class Automovel {
     }
 
     public void setCombustivelAtual(double combustivelAtual) throws CombustivelOverflow {
-        if (this.CombustivelAtual < combustivelAtual) {
+        if (this.capacidadeMaximaTanque < combustivelAtual) {
             throw new CombustivelOverflow();
         }
         CombustivelAtual = combustivelAtual;
