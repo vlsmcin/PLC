@@ -6,8 +6,8 @@ public abstract class Cliente {
         pontos = 0;
     }
 
-    protected int pontosSemBonus(double preco, int qtdItem) {
-        this.pontos = Math.round((preco / 10) * qtdItem);
+    protected double pontosSemBonus(double preco, int qtdItem) {
+        return Math.round((preco / 10) * qtdItem);
     }
 
     public abstract void renderBonus(double preco, int qtdItem);
